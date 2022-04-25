@@ -1,4 +1,3 @@
-
 FROM python:3.9.7-slim-buster
 
 ENV PIP_NO_CACHE_DIR 1
@@ -69,13 +68,13 @@ RUN git clone -b main https://github.com/MickeyxD/TokisakiRobot /root/SuzuneHori
 WORKDIR /root/SuzuneHorikita
 
 
-#Copy config file to /root/SuzuneHorikita/SuzuneHorikita
+# Copy config file to /root/SuzuneHorikita/SuzuneHorikita
 COPY ./SuzuneHorikita/config.py ./SuzuneHorikita/config.py* /root/SuzuneHorikita/SuzuneHorikita/
 
 ENV PATH="/home/bot/bin:$PATH"
 
 # Install requirements
-RUN pip3 install -U -r reinstalled.horikita
+RUN pip3 install -U -r requirements.txt
 
 # Starting Worker
 CMD ["python3","-m","SuzuneHorikita"]
