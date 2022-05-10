@@ -1,4 +1,4 @@
-FROM python:3.10.4-slim-buster
+FROM python:3.11.0b1-slim-buster
 
 ENV PIP_NO_CACHE_DIR 1
 
